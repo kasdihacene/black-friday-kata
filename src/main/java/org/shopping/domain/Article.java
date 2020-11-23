@@ -4,18 +4,18 @@ public class Article {
 
     private final String itemCode;
     private final String brand;
-    private final int price;
-    private final int quantity;
+    private final Price price;
+    private final Quantity quantity;
 
-    public Article(String itemCode, String brand, int price, int quantity) {
+    public Article(String itemCode, String brand, Quantity quantityValue, Price priceValue) {
         this.itemCode = itemCode;
         this.brand = brand;
-        this.price = price;
-        this.quantity = quantity;
+        this.price = priceValue;
+        this.quantity = quantityValue;
     }
 
     public int calculateAmount() {
-        return this.getPrice() * this.getQuantity();
+        return price.calculateAmount(quantity);
     }
 
     public String getItemCode() {
@@ -26,11 +26,11 @@ public class Article {
         return brand;
     }
 
-    public int getPrice() {
+    public Price getPrice() {
         return price;
     }
 
-    public int getQuantity() {
+    public Quantity getQuantity() {
         return quantity;
     }
 }
