@@ -14,6 +14,10 @@ public class Article {
         this.quantity = quantity;
     }
 
+    public int calculateAmount() {
+        return this.getPrice() * this.getQuantity();
+    }
+
     public String getItemCode() {
         return itemCode;
     }
