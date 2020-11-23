@@ -11,7 +11,7 @@ public class ShoppingCalculatorTest {
     @Test
     public void should_calculate_amount_to_pay_when_having_one_sneakers_adidas(){
         // Arrange
-        Article article = new Article("SNEAKERS", "Adidas", new Quantity(1), new Price(100));
+        Article article = new Article("SNEAKERS", "Adidas", Quantity.of(1), Price.of(100));
 
         // Act
         int calculatedAmount = ShoppingCalculator.calculate(article);
@@ -23,7 +23,7 @@ public class ShoppingCalculatorTest {
     @Test
     public void should_calculate_amount_to_pay_when_having_one_sneakers_nike(){
         // Arrange
-        Article article = new Article("SNEAKERS", "Adidas", new Quantity(1), new Price(150));
+        Article article = new Article("SNEAKERS", "Adidas", Quantity.of(1), Price.of(150));
 
         // Act
         int calculatedAmount = ShoppingCalculator.calculate(article);
@@ -36,7 +36,7 @@ public class ShoppingCalculatorTest {
     public void should_calculate_amount_to_pay_when_having_two_sneakers_adidas(){
         // Arrange
         int quantity = 2;
-        Article article = new Article("SNEAKERS", "Adidas", new Quantity(quantity), new Price(100));
+        Article article = new Article("SNEAKERS", "Adidas", Quantity.of(quantity), Price.of(100));
 
         // Act
         int calculatedAmount = ShoppingCalculator.calculate(article);

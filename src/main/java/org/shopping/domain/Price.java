@@ -3,8 +3,12 @@ package org.shopping.domain;
 public class Price {
     private int amount;
 
-    public Price(int amount) {
+    private Price(int amount) {
         this.amount = amount;
+    }
+
+    public static Price of(int amount) {
+        return new Price(amount);
     }
 
     public int calculateAmount(Quantity quantity) {
